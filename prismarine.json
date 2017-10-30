@@ -13,12 +13,22 @@
           "files": "https://raw.githubusercontent.com/haniokasai/pufferpanel-pocketmine-templates/master/start.sh"
         },
         {
-          "files": "https://bintray.com/pocketmine/PocketMine/download_file?file_path=PHP_7.0.6_x86-64_Linux.tar.gz",
+          "files": "https://github.com/haniokasai/pufferpanel-pocketmine-templates/raw/master/bin70.tar.gz",
+          "type": "download"
+        },
+        {
+          "files": "https://raw.githubusercontent.com/haniokasai/pufferpanel-pocketmine-templates/master/pocketmine.yml",
           "type": "download"
         },
         {
           "commands": [
-            "tar -zxf PHP_7.0.6_x86-64_Linux.tar.gz"
+            "chmod 700 pocketmine.yml"
+          ],
+          "type": "command"
+        },
+        {
+          "commands": [
+            "tar -zxf bin70.tar.gz"
           ],
           "type": "command"
         },
