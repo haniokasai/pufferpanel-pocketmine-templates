@@ -1,0 +1,61 @@
+{
+  "pufferd": {
+    "type": "pocketmine",
+    "display": "prismarine",
+    "install": {
+      "commands": [
+        {
+          "type": "download",
+          "files": "http://jenkins.haniokasai.com/job/Prismarine-PMMP/lastSuccessfulBuild/artifact/artifacts/Prismarine-PHP7.phar"
+        },
+        {
+          "type": "download",
+          "files": "https://raw.githubusercontent.com/haniokasai/pufferpanel-pocketmine-templates/master/start.sh"
+        },
+        {
+          "files": "https://bintray.com/pocketmine/PocketMine/download_file?file_path=PHP_7.0.6_x86-64_Linux.tar.gz",
+          "type": "download"
+        },
+        {
+          "commands": [
+            "tar -zxf PHP_7.0.6_x86-64_Linux.tar.gz"
+          ],
+          "type": "command"
+        },
+        {
+          "type": "writefile",
+          "text": "server-ip=${ip}\nserver-port=${port}\n",
+          "target": "server.properties"
+        }
+      ]
+    },
+    "run": {
+      "stop": "stop",
+      "pre": [],
+      "post": [],
+      "arguments": [
+      	"--no-wizard"
+      ],
+      "program": "GenisysPro-master/start.sh"
+    },
+    "environment": {
+      "type": "tty"
+    },
+    "data": {
+      "ip": {
+        "value": "0.0.0.0",
+        "required": true,
+        "desc": "What IP to bind the server to",
+        "display": "IP",
+        "internal": false
+      },
+      "port": {
+        "value": "19132",
+        "required": true,
+        "desc": "What port to bind the server to",
+        "display": "Port",
+        "internal": false
+      }
+    }
+  }
+}
