@@ -36,7 +36,7 @@
       "arguments": [
       	"--no-wizard"
       ],
-      "program": "GenisysPro-master/start.sh"
+      "program": "start.sh"
     },
     "environment": {
       "type": "tty"
